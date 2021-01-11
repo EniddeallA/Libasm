@@ -1,0 +1,1 @@
+//nasm -felf64 file.s && ld -s file.o
