@@ -1,22 +1,14 @@
 section .data
     msg db "hello world",0
 section .text
-    global  _start
-
-_start:
-    mov rdi, msg
-    call ft_strlen
-    int 80h
-    ret
+    global  ft_strlen
 
 ft_strlen:
-    xor rcx, rcx
+    xor rax, rax
     loop:
-        cmp byte [rdi], 0x0
+        cmp BYTE [rdi + rax], 0
         jz end
-        inc rcx
-        inc rdi
+        inc rax
         jmp loop
     end:
-        mov rax, rcx
         ret
