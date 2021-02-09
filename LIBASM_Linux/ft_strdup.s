@@ -14,7 +14,7 @@ ft_strdup:
         je end
         mov dl, BYTE [rdi + rcx]
         mov BYTE [rax + rcx], dl
-        inc cl
+        inc rcx
         jmp dup
     end:
         mov BYTE [rax + rcx], 0
