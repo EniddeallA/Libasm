@@ -1,1 +1,4 @@
-//nasm -felf64 file.s && gcc main.c file.o
+Linux :
+    nasm -felf64 file.s && gcc main.c file.s
+MacOS :
+    nasm -f macho64 file.s && gcc main.c file.s
