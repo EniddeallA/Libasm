@@ -104,7 +104,7 @@ int main()
 	ft_list_push_front(&t, strdup("hello"));
 	printf("List size : %d\n", ft_list_size(NULL));
 	
-	// ft_list_sort(&t, &strcmp);
+	ft_list_sort(&t, &strcmp);
 	// // printf("After sort:\n");
 	// ft_list_remove_if(&t, "hello", &strcmp, &free);
 	while (t)

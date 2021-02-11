@@ -2,7 +2,6 @@ section .text
     global _ft_list_size
 
 _ft_list_size:
-    xor rcx, rcx
     xor rdx, rdx
     iterate:
         cmp rdi, 0

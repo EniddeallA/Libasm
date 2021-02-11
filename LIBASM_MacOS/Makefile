@@ -24,6 +24,7 @@ $(LIB): $(SRCS)
 	$(NASM) ft_atoi_base_bonus.s
 	$(NASM) ft_list_push_front_bonus.s
 	$(NASM) ft_list_size_bonus.s
+	$(NASM) ft_list_sort_bonus.s
 	$(CC) $(OBJS) -c $(SRCS) -o $(MAIN)
 	ar rc $(LIB) *.o
 	ranlib $(LIB)
