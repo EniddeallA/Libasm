@@ -102,7 +102,7 @@ int main()
 	ft_list_push_front(&t, strdup(", wtsp!"));
 	ft_list_push_front(&t, strdup(", world"));
 	ft_list_push_front(&t, strdup("hello"));
-	// printf("List size : %d\n", ft_list_size(t));
+	printf("List size : %d\n", ft_list_size(NULL));
 	
 	// ft_list_sort(&t, &strcmp);
 	// // printf("After sort:\n");

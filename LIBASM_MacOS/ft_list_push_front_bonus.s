@@ -12,10 +12,10 @@ _ft_list_push_front:
     pop rdi
     cmp rax, 0x0
     jz return
-    mov [rax], rsi
-    mov rcx, [rdi]
-    mov [rax + 8], rcx
-    mov [rdi], rax
-return:
-    pop rsp
-    ret
+    mov QWORD [rax], rsi
+    mov rcx, QWORD [rdi]
+    mov QWORD [rax + 8], rcx
+    mov QWORD [rdi], rax
+    return:
+        pop rsp
+        ret
