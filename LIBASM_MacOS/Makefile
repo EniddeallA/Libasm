@@ -22,6 +22,7 @@ $(LIB): $(SRCS)
 	$(NASM) ft_read.s
 	$(NASM) ft_strdup.s
 	$(NASM) ft_atoi_base_bonus.s
+	$(NASM) ft_list_push_front.s
 	$(CC) $(OBJS) -c $(SRCS) -o $(MAIN)
 	ar rc $(LIB) *.o
 	ranlib $(LIB)
