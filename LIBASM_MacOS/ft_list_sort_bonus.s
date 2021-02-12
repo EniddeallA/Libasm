@@ -2,38 +2,36 @@ section .text
     global _ft_list_sort
 
 _ft_list_sort:
-    mov rdx, [rdi]
-    mov r9, [rdi]
-    iterate_prev:
-        cmp rdx, 0
+    cmp rdi, 0
+    je end
+    mov r8, [rdi]
+    prev:
+        cmp r8, 0
         je end
-        mov rcx, [rdx + 8]
-        iterate_next:
-                cmp rcx, 0
-                je end
-                push rdi
-                push rsi
-                mov rdi, [rdx]
-                mov rsi, [rcx]
-                call rsi
-                pop rsi
-                pop rdi
-                cmp rax, 1
-                je sort
-            back:
-                mov rcx, [rdx + 8]
-                jmp iterate_next
-        mov rdx, [rdx + 8]
-        jmp iterate_prev
-    sort:
-        mov r8, [rdi]
-        mov rdx,  [r8]
-        mov rax, [rcx]
-        mov [r8], rax
-        mov [rcx], rdx
-        jmp back
+        mov r9, [r8 + 8]
+        next:
+            cmp r9, 0
+            je prev_iter
+            mov rdx, [rsi]
+            push rdi
+            pop rsi
+            call rdx
+            pop rsi
+            pop rdi
+            cmp rax, 1
+            je sort
+        next_iter:
+            mov r9, [r9 + 8]
+            jmp next
+    prev_iter:
+        mov r8, [r8 + 8]
+        jmp prev
 
+    sort:
+        mov r10, [r8]
+        mov r11, [r9]
+        mov r9, r10
+        mov r8, r10
+        jmp next_iter
     end:
-        mov [rdi], r9
         ret
-    
