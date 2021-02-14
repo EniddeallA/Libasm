@@ -2,36 +2,51 @@ section .text
     global _ft_list_sort
 
 _ft_list_sort:
+    push r9
+    push r12
     cmp rdi, 0
-    je end
-    mov r8, [rdi]
-    prev:
-        cmp r8, 0
-        je end
+    je restore
+    mov r12, [rdi]
+    cmp rsi, 0
+    jz end
+    jmp compare_begin
+    incr_begin:
+        mov r8, [rdi]
         mov r9, [r8 + 8]
-        next:
-            cmp r9, 0
-            je prev_iter
-            mov rdx, [rsi]
-            push rdi
-            pop rsi
-            call rdx
-            pop rsi
-            pop rdi
-            cmp rax, 1
-            je sort
-        next_iter:
-            mov r9, [r9 + 8]
-            jmp next
-    prev_iter:
-        mov r8, [r8 + 8]
-        jmp prev
-
+        mov [rdi], r9
+    compare_begin:
+        cmp QWORD [rdi], 0
+        jz end
+        mov r8, [rdi]
+        mov r9, [r8 + 8]
+    compare_current:
+        cmp r9, 0
+        jz incr_begin
     sort:
-        mov r10, [r8]
-        mov r11, [r9]
-        mov r9, r10
-        mov r8, r10
-        jmp next_iter
+        push rdi
+        push rsi
+        mov rax, rsi
+        mov rdi, [r8]
+        mov rsi, [r9]
+        call rax
+        pop rsi
+        pop rdi
+        cmp rax, 0
+        jg swap
+    incr_current:
+        mov r8, [r9 + 8]
+        mov r9, r8
+        jmp compare_current
+    swap:
+        mov rcx, [rdi]
+        mov r8, [rcx]
+        mov rax, [r9]
+        mov [rcx], rax
+        mov [r9], r8
+        jmp incr_current
     end:
+        mov [rdi], r12
+    restore:
+        pop r12
+        pop r9
         ret
