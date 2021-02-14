@@ -2,7 +2,6 @@ section .text
     global _ft_list_sort
 
 _ft_list_sort:
-    push r9
     push r12
     cmp rdi, 0
     je restore
@@ -48,5 +47,4 @@ _ft_list_sort:
         mov [rdi], r12
     restore:
         pop r12
-        pop r9
         ret

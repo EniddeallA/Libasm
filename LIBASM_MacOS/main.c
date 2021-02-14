@@ -73,12 +73,7 @@ extern void		ft_list_remove_if(t_list **begin_list, void *data_ref,
 // {
 // 	t_list *temp = *begin_list;
 // 	t_list *prev = NULL;
-// 	if (temp && !(*cmp)(temp->data, data_ref))
-// 	{
-// 		*begin_list = temp->next;
-// 		free_fct(temp->data);
-// 		free(temp);
-// 	}
+	
 // 	while (temp)
 // 	{
 // 		if (!(*cmp)(temp->data, data_ref))
@@ -103,16 +98,29 @@ int main()
 	ft_list_push_front(&t, strdup(", world"));
 	ft_list_push_front(&t, strdup("hello"));
 	printf("List size : %d\n", ft_list_size(t));
-	
+	printf("\nBefore sort:\n");
+	t_list *t2 = t;
+	while (t2)
+	{
+		printf("%s\n", (char *)t2->data);
+		t2 = t2->next;
+	}
+
 	ft_list_sort(&t, &strcmp);
-	// // // printf("After sort:\n");
-	// // ft_list_remove_if(&t, "hello", &strcmp, &free);
+	printf("\nAfter sort:\n");
+	t_list *t1 = t;
 	while (t)
 	{
 		printf("%s\n", (char *)t->data);
 		t = t->next;
 	}
-
+	ft_list_remove_if(&t1, "hello", &strcmp, &free);
+	printf("\nremoved node containing : 'hello':\n");
+	while (t1)
+	{
+		printf("%s\n", (char *)t1->data);
+		t1 = t1->next;
+	}
 	//gcc -fno-asynchronous-unwind-tables -O2 -s -c -o main.o main.c
 	//./objconv -fnasm main.o
 
