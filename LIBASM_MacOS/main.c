@@ -91,6 +91,7 @@ int main()
 {
 	// if ((ft_read(-1, line, 9) == -1))
 	// 	printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
+
 	t_list *t = (t_list*)malloc(sizeof(t_list));
 	t->data = strdup("test");
 	t->next = NULL;
@@ -114,13 +115,15 @@ int main()
 		printf("%s\n", (char *)t->data);
 		t = t->next;
 	}
-	ft_list_remove_if(&t1, "hello", &strcmp, &free);
+
+	ft_list_remove_if(&t1, "test", &strcmp, &free);
 	printf("\nremoved node containing : 'hello':\n");
 	while (t1)
 	{
 		printf("%s\n", (char *)t1->data);
 		t1 = t1->next;
 	}
+
 	//gcc -fno-asynchronous-unwind-tables -O2 -s -c -o main.o main.c
 	//./objconv -fnasm main.o
 
