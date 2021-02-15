@@ -1,8 +1,0 @@
-Linux :
-    nasm -felf64 file.s && gcc main.c file.s
-MacOS :
-    nasm -f macho64 file.s && gcc main.c file.s
-
-Generate assembly
-gcc -fno-asynchronous-unwind-tables -O2 -s -c -o main.o main.c
-./objconv -fnasm main.o
