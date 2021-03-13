@@ -20,66 +20,6 @@ extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, 
 						int (*cmp)(), void (*free_fct)(void *));
 
-
-void		ft_list_push_front(t_list **begin_list, void *data)
-{
-	t_list *new = (t_list*)malloc(sizeof(t_list));
-	new->data = data;
-	new->next = *begin_list;
-	*begin_list = new;
-}
-
-int ft_list_size(t_list *begin_list)
-{
-	int i = 0;
-
-	while (begin_list)
-	{
-		i++;
-		begin_list = begin_list->next;
-	}
-	return (i);
-}
-
-void ft_list_sort(t_list **begin_list, int (*cmp)())
-{
-	t_list *temp1 = *begin_list;
-	t_list *temp2 = NULL;
-	while (temp1)
-	{
-		temp2 = temp1->next;
-		while (temp2)
-		{
-			if ((*cmp)(temp1->data, temp2->data) == 1)
-			{
-				void *a;
-				a = temp1->data;
-				temp1->data = temp2->data;
-				temp2->data = a;
-			}
-			temp2 = temp2->next;
-		}
-		temp1 = temp1->next;
-	}
-}
-
-void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *))
-{
-	t_list *temp = *begin_list;
-	t_list *prev = NULL;
-	
-	while (temp)
-	{
-		if (!(*cmp)(temp->data, data_ref))
-		{
-			prev = temp->next;
-			free_fct(temp->data);
-			free(temp);
-		}
-		temp = temp->next;
-	}	
-}
-
 int main()
 {
 	t_list *t = (t_list*)malloc(sizeof(t_list));

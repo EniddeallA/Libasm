@@ -16,9 +16,7 @@ extern char		*ft_strdup(const char *s);
 
 int main()
 {
-	// if ((ft_read(-1, line, 9) == -1))
-	// 	printf("\033[1;31mERROR: %s\033[0m\n", strerror(errno));
-
+	
 
 	return (0);
 }
