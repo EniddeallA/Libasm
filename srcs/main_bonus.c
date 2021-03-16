@@ -13,37 +13,12 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-// extern int		ft_atoi_base(char *str, char *base);
+extern int		ft_atoi_base(char *str, char *base);
 extern void		ft_list_push_front(t_list **begin_list, void *data);
 extern int		ft_list_size(t_list *begin_list);
 extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, 
 						int (*cmp)(), void (*free_fct)(void *));
-
-int ft_atoi_base(char *str, char *base)
-{
-	int i = 0;
-	int res = 0;
-	int len = 0;
-	int j;
-
-	while (base[i++])
-		len++;
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (base[j])
-		{
-			if (base[j] == str[i])
-				break;
-			j++;
-		}
-		res = res * len + j;
-		i++;
-	}
-	return res;
-}
 
 int main()
 {
@@ -57,7 +32,8 @@ int main()
 	printf("FT_ATOI_BASE : \n");
 	printf("\033[0m");
 
-	printf("[_FT: %d]\n", ft_atoi_base("10", "01"));
+	ft_atoi_base("1", "0123456789");
+	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
