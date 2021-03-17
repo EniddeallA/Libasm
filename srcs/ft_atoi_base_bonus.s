@@ -36,8 +36,6 @@ incr_rcx:
 	je check_sign
 check_sign:
 	mov r11, 2
-	cmp BYTE [rdi + rcx], 45
-	je incr_rcx
 	cmp BYTE [rdi + rcx], 43
 	je incr_rcx
 	cmp BYTE [rdi + rcx], 45
@@ -45,6 +43,7 @@ check_sign:
 	jmp atoi_rdi
 negative:
 	mov r10, -1
+	inc rcx
 atoi_rdi:
 	cmp BYTE [rdi + rcx], 0x0
 	je end_atoi
@@ -59,17 +58,13 @@ atoi_rsi:
 	inc rdx
 	jmp atoi_rsi
 calculate:
-	mov rax, r9
-	mul r8
-	add rax, rdx
-	mov r9, rax 
+	imul r9, r8
+	add r9, rdx
 	inc rcx
+	mov rdx, 0
 	jmp atoi_rdi
 end_atoi:
 	mov rax, r9
 	mul r10
 end:
 	ret
-	
-
-

@@ -32,8 +32,7 @@ int main()
 	printf("FT_ATOI_BASE : \n");
 	printf("\033[0m");
 
-	ft_atoi_base("1", "0123456789");
-	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
+ 	printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
 	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
