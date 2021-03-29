@@ -7,7 +7,7 @@ _ft_list_sort:
     je restore
     mov r12, [rdi]
     cmp rsi, 0
-    jz end
+    je end
     jmp compare_begin
     incr_begin:
         mov r8, [rdi]

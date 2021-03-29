@@ -16,33 +16,36 @@ typedef struct		s_list
 extern int		ft_atoi_base(char *str, char *base);
 extern void		ft_list_push_front(t_list **begin_list, void *data);
 extern int		ft_list_size(t_list *begin_list);
-extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
+// extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, 
 						int (*cmp)(), void (*free_fct)(void *));
 
+void		ft_list_sort(t_list **begin_list, int (*cmp)())
+{
+	t_list *list;
+	t_list *next;
+	char *a;
+
+	list = *begin_list;
+	while (list->next)
+	{
+		next = list->next;
+		while (next->next)
+		{
+			if (cmp(list->data, next->data) == 0)
+			{
+				a = list->data;
+				list->data = next->data;
+				next->data = a;
+			}
+			next = next->next;
+		}
+		list = list->next;
+	}
+}
+
 int main()
 {
-	printf("\033[0;34m");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("-------------------------------------");
-	printf("\n");
-
-	printf("\033[0;35m");
-	printf("FT_ATOI_BASE : \n");
-	printf("\033[0m");
-
- 	printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
-
-	// t_list *t = (t_list*)malloc(sizeof(t_list));
-	// t->data = strdup("test");
-	// t->next = NULL;
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
 	// printf("\n");
@@ -50,11 +53,30 @@ int main()
 	// printf("\n");
 
 	// printf("\033[0;35m");
-	// printf("FT_LIST_PUSH_FRONT : \n");
+	// printf("FT_ATOI_BASE : \n");
 	// printf("\033[0m");
-	// ft_list_push_front(&t, strdup(", wtsp!"));
-	// ft_list_push_front(&t, strdup(", world"));
-	// ft_list_push_front(&t, strdup("hello"));
+
+ 	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
+	// printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
+
+	t_list *t = NULL;
+	// printf("\033[0;34m");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("-------------------------------------");
+	// printf("\n");
+
+	printf("\033[0;35m");
+	printf("FT_LIST_PUSH_FRONT : \n");
+	printf("\033[0m");
+	ft_list_push_front(&t, strdup("apple"));
+	ft_list_push_front(&t, strdup("milk"));
+	ft_list_push_front(&t, strdup("bread"));
 
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
@@ -85,19 +107,19 @@ int main()
 
 	// printf("\n");
 
-	// printf("\033[0;35m");
-	// printf("FT_LIST_SORT : \n");
-	// printf("\033[0m");
-	// ft_list_sort(&t, &strcmp);
+	printf("\033[0;35m");
+	printf("FT_LIST_SORT : \n");
+	printf("\033[0m");
+	ft_list_sort(&t, &strcmp);
 	// printf("\033[0;34m");
 	// printf("\nAfter sort:\n");
 	// printf("\033[0m");
-	// t_list *t1 = t;
-	// while (t)
-	// {
-	// 	printf("%s\n", (char *)t->data);
-	// 	t = t->next;
-	// }
+	t_list *t1 = t;
+	while (t)
+	{
+		printf("%s\n", (char *)t->data);
+		t = t->next;
+	}
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
 	// printf("\n");
