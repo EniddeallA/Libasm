@@ -16,33 +16,33 @@ typedef struct		s_list
 extern int		ft_atoi_base(char *str, char *base);
 extern void		ft_list_push_front(t_list **begin_list, void *data);
 extern int		ft_list_size(t_list *begin_list);
-// extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
+extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, 
 						int (*cmp)(), void (*free_fct)(void *));
 
-void		ft_list_sort(t_list **begin_list, int (*cmp)())
-{
-	t_list *list;
-	t_list *next;
-	char *a;
+// void		ft_list_sort(t_list **begin_list, int (*cmp)())
+// {
+// 	t_list *list;
+// 	t_list *next;
+// 	char *a;
 
-	list = *begin_list;
-	while (list->next)
-	{
-		next = list->next;
-		while (next->next)
-		{
-			if (cmp(list->data, next->data) == 0)
-			{
-				a = list->data;
-				list->data = next->data;
-				next->data = a;
-			}
-			next = next->next;
-		}
-		list = list->next;
-	}
-}
+// 	list = *begin_list;
+// 	while (list->next)
+// 	{
+// 		next = list->next;
+// 		while (next->next)
+// 		{
+// 			if (cmp(list->data, next->data) == 0)
+// 			{
+// 				a = list->data;
+// 				list->data = next->data;
+// 				next->data = a;
+// 			}
+// 			next = next->next;
+// 		}
+// 		list = list->next;
+// 	}
+// }
 
 int main()
 {
@@ -74,9 +74,26 @@ int main()
 	printf("\033[0;35m");
 	printf("FT_LIST_PUSH_FRONT : \n");
 	printf("\033[0m");
-	ft_list_push_front(&t, strdup("apple"));
 	ft_list_push_front(&t, strdup("milk"));
 	ft_list_push_front(&t, strdup("bread"));
+	ft_list_push_front(&t, strdup("milk"));
+	ft_list_push_front(&t, strdup("apple"));
+	ft_list_push_front(&t, strdup("ZEBRA"));
+	ft_list_push_front(&t, strdup("tomato"));
+	ft_list_push_front(&t, strdup("milk"));
+
+	printf("\033[0;34m");
+	printf("--- EXPECTED RESULT ---");
+	printf("\n");
+	printf("\033[0m");
+	printf("ZEBRA\n");
+	printf("apple\n");
+	printf("bread\n");
+	printf("milk\n");
+	printf("milk\n");
+	printf("milk\n");
+	printf("tomato\n");
+	printf("\n");
 
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
