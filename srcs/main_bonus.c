@@ -56,44 +56,32 @@ int main()
 	// printf("FT_ATOI_BASE : \n");
 	// printf("\033[0m");
 
- 	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
+ 	printf("[_FT: %d]\n", ft_atoi_base("--2147483648", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
 
-	t_list *t = NULL;
+	// t_list *t = NULL;
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
 	// printf("\n");
 	// printf("-------------------------------------");
 	// printf("\n");
 
-	printf("\033[0;35m");
-	printf("FT_LIST_PUSH_FRONT : \n");
-	printf("\033[0m");
-	ft_list_push_front(&t, strdup("milk"));
-	ft_list_push_front(&t, strdup("bread"));
-	ft_list_push_front(&t, strdup("milk"));
-	ft_list_push_front(&t, strdup("apple"));
-	ft_list_push_front(&t, strdup("ZEBRA"));
-	ft_list_push_front(&t, strdup("tomato"));
-	ft_list_push_front(&t, strdup("milk"));
+	// printf("\033[0;35m");
+	// printf("FT_LIST_PUSH_FRONT : \n");
+	// printf("\033[0m");
+	// ft_list_push_front(&t, strdup("milk"));
+	// ft_list_push_front(&t, strdup("bread"));
+	// ft_list_push_front(&t, strdup("milk"));
+	// ft_list_push_front(&t, strdup("apple"));
+	// ft_list_push_front(&t, strdup("ZEBRA"));
+	// ft_list_push_front(&t, strdup("tomato"));
+	// ft_list_push_front(&t, strdup("milk"));
 
-	printf("\033[0;34m");
-	printf("--- EXPECTED RESULT ---");
-	printf("\n");
-	printf("\033[0m");
-	printf("ZEBRA\n");
-	printf("apple\n");
-	printf("bread\n");
-	printf("milk\n");
-	printf("milk\n");
-	printf("milk\n");
-	printf("tomato\n");
-	printf("\n");
 
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
@@ -123,20 +111,33 @@ int main()
 	// }
 
 	// printf("\n");
+	
+	// printf("\033[0;34m");
+	// printf("--- EXPECTED RESULT ---");
+	// printf("\n");
+	// printf("\033[0m");
+	// printf("ZEBRA\n");
+	// printf("apple\n");
+	// printf("bread\n");
+	// printf("milk\n");
+	// printf("milk\n");
+	// printf("milk\n");
+	// printf("tomato\n");
+	// printf("\n");
 
-	printf("\033[0;35m");
-	printf("FT_LIST_SORT : \n");
-	printf("\033[0m");
-	ft_list_sort(&t, &strcmp);
+	// printf("\033[0;35m");
+	// printf("FT_LIST_SORT : \n");
+	// printf("\033[0m");
+	// ft_list_sort(&t, &strcmp);
 	// printf("\033[0;34m");
 	// printf("\nAfter sort:\n");
 	// printf("\033[0m");
-	t_list *t1 = t;
-	while (t)
-	{
-		printf("%s\n", (char *)t->data);
-		t = t->next;
-	}
+	// t_list *t1 = t;
+	// while (t)
+	// {
+	// 	printf("%s\n", (char *)t->data);
+	// 	t = t->next;
+	// }
 	// printf("\033[0;34m");
 	// printf("-------------------------------------");
 	// printf("\n");

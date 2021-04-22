@@ -1,50 +1,45 @@
-section .text
-    global _ft_list_sort
+section	.text
+	global	_ft_list_sort
 
 _ft_list_sort:
-    push r12
-    cmp rdi, 0
-    je restore
-    mov r12, [rdi]
-    cmp rsi, 0
-    je end
-    jmp compare_begin
-    incr_begin:
-        mov r8, [rdi]
-        mov r9, [r8 + 8]
-        mov [rdi], r9
-    compare_begin:
-        cmp QWORD [rdi], 0
-        jz end
-        mov r8, [rdi]
-        mov r9, [r8 + 8]
-    compare_current:
-        cmp r9, 0
-        jz incr_begin
-    sort:
-        push rdi
-        push rsi
-        mov rax, rsi
-        mov rdi, [r8]
-        mov rsi, [r9]
-        call rax
-        pop rsi
-        pop rdi
-        cmp rax, 0
-        jg swap
-    incr_current:
-        mov r8, [r9 + 8]
-        mov r9, r8
-        jmp compare_current
-    swap:
-        mov rcx, [rdi]
-        mov r8, [rcx]
-        mov rax, [r9]
-        mov [rcx], rax
-        mov [r9], r8
-        jmp incr_current
-    end:
-        mov [rdi], r12
-    restore:
-        pop r12
-        ret
+	mov rdx, [rdi]
+	mov r8, rsi
+
+current:
+	cmp rdx, 0
+	je exit
+	mov rcx, qword [rdx+8]
+	jmp next
+
+next:
+	cmp rcx, 0
+	je incr_current
+	mov rdi, qword [rdx]
+	mov rsi, qword [rcx]
+	push rdx
+	push rcx
+	push r8
+	call r8
+	pop r8
+	pop rcx
+	pop rdx
+	cmp rax, 0
+	jg sort
+	mov rcx, qword [rcx+8]
+	jmp next
+
+sort:
+	mov rdi, qword [rdx]
+	mov rsi, qword [rcx]
+	mov qword [rdx], rsi
+	mov qword [rcx], rdi
+	mov rcx, qword [rcx+8]
+	jmp next
+
+
+incr_current:
+	mov rdx, qword [rdx+8]
+	jmp current
+
+exit:
+	ret
