@@ -56,13 +56,15 @@ int main()
 	// printf("FT_ATOI_BASE : \n");
 	// printf("\033[0m");
 
- 	printf("[_FT: %d]\n", ft_atoi_base("--2147483648", "0123456789"));
-	printf("[_FT: %d]\n", ft_atoi_base("0", "0123456789"));
+ 	printf("[_FT: %d]\n", ft_atoi_base("+++2147483647", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("+-56", "0123456789"));
 	printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
 	printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
 	printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
 	printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
 	printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
+	printf("[_FT: %d]\n", ft_atoi_base("111", "01"));
+	printf("[_FT: %d]\n", ft_atoi_base("-ff", "0123456789abcdef"));
 
 	// t_list *t = NULL;
 	// printf("\033[0;34m");
