@@ -1,5 +1,6 @@
 .vscode
 objconv
-compiler.txt
-LIBASM_MacOS/a.out.dSYM
+srcs/a.out.dSYM
+srcs/a.out
 .DS_Store
+42libasm_tester
