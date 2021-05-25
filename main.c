@@ -57,7 +57,8 @@ int		main(void)
 	printf("[SYS: %d] \t [_FT: %d]\n", strcmp("allaeddine", "allaeddine"), ft_strcmp("allaeddine", "allaeddine"));	
 	printf("[SYS: %d] \t [_FT: %d]\n", strcmp("allae", "allaeddine"), ft_strcmp("allae", "allaeddine"));
 	printf("[SYS: %d] \t [_FT: %d]\n", strcmp("allaeddine", "allae"), ft_strcmp("allaeddine", "allae"));
-	
+	printf("[SYS: %d] \t [_FT: %d]\n", strcmp("\xfe", "\xfe\xff"), ft_strcmp("\xfe", "\xfe\xff"));
+	printf("[SYS: %d] \t [_FT: %d]\n", strcmp("\xf", "\xfe"), ft_strcmp("\xf", "\xfe"));
 	printf("\033[0;34m");
 	printf("-------------------------------------");
 	printf("\n");
