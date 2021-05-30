@@ -65,86 +65,87 @@ int main()
 	printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
 	printf("[_FT: %d]\n", ft_atoi_base("111", "01"));
 	printf("[_FT: %d]\n", ft_atoi_base("-ff", "0123456789abcdef"));
+	
 
-	t_list *t = NULL;
-	printf("\033[0;34m");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("-------------------------------------");
-	printf("\n");
+	// t_list *t = NULL;
+	// printf("\033[0;34m");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("-------------------------------------");
+	// printf("\n");
 
-	printf("\033[0;35m");
-	printf("FT_LIST_PUSH_FRONT : \n");
-	printf("\033[0m");
-	ft_list_push_front(&t, strdup("milk"));
-	ft_list_push_front(&t, strdup("bread"));
-	ft_list_push_front(&t, strdup("milk"));
-	ft_list_push_front(&t, strdup("apple"));
-	ft_list_push_front(&t, strdup("ZEBRA"));
-	ft_list_push_front(&t, strdup("tomato"));
-	ft_list_push_front(&t, strdup("milk"));
+	// printf("\033[0;35m");
+	// printf("FT_LIST_PUSH_FRONT : \n");
+	// printf("\033[0m");
+	// ft_list_push_front(&t, strdup("milk"));
+	// ft_list_push_front(&t, strdup("bread"));
+	// ft_list_push_front(&t, strdup("milk"));
+	// ft_list_push_front(&t, strdup("apple"));
+	// ft_list_push_front(&t, strdup("ZEBRA"));
+	// ft_list_push_front(&t, strdup("tomato"));
+	// ft_list_push_front(&t, strdup("milk"));
 
 
-	printf("\033[0;34m");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("-------------------------------------");
-	printf("\n");
+	// printf("\033[0;34m");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("-------------------------------------");
+	// printf("\n");
 
-	printf("\033[0;35m");
-	printf("FT_LIST_SIZE : \n");
-	printf("\033[0m");
-	printf("List size : %d\n", ft_list_size(t));
+	// printf("\033[0;35m");
+	// printf("FT_LIST_SIZE : \n");
+	// printf("\033[0m");
+	// printf("List size : %d\n", ft_list_size(t));
 
-	printf("\033[0;34m");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("\033[0;35m");
-	printf("FT_LIST_SORT : \n");
-	printf("\033[0m");
+	// printf("\033[0;34m");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("\033[0;35m");
+	// printf("FT_LIST_SORT : \n");
+	// printf("\033[0m");
 
-	printf("\033[0;34m");
-	printf("\nBefore sort:\n");
-	printf("\033[0m");
-	t_list *t2 = t;
-	while (t2)
-	{
-		printf("%s\n", (char *)t2->data);
-		t2 = t2->next;
-	}
+	// printf("\033[0;34m");
+	// printf("\nBefore sort:\n");
+	// printf("\033[0m");
+	// t_list *t2 = t;
+	// while (t2)
+	// {
+	// 	printf("%s\n", (char *)t2->data);
+	// 	t2 = t2->next;
+	// }
 
-	printf("\n");
+	// printf("\n");
 
-	ft_list_sort(&t, &strcmp);
-	printf("\033[0;34m");
-	printf("\nAfter sort:\n");
-	printf("\033[0m");
-	t_list *t1 = t;
-	while (t)
-	{
-		printf("%s\n", (char *)t->data);
-		t = t->next;
-	}
-	printf("\033[0;34m");
-	printf("-------------------------------------");
-	printf("\n");
-	printf("-------------------------------------");
-	printf("\n");
+	// ft_list_sort(&t, &strcmp);
+	// printf("\033[0;34m");
+	// printf("\nAfter sort:\n");
+	// printf("\033[0m");
+	// t_list *t1 = t;
+	// while (t)
+	// {
+	// 	printf("%s\n", (char *)t->data);
+	// 	t = t->next;
+	// }
+	// printf("\033[0;34m");
+	// printf("-------------------------------------");
+	// printf("\n");
+	// printf("-------------------------------------");
+	// printf("\n");
 
-	printf("\033[0;35m");
-	printf("FT_LIST_REMOVE_IF : \n");
-	printf("\033[0m");
-	ft_list_remove_if(&t1, "tomato", &strcmp, &free);
-	printf("\033[0;34m");
-	printf("\nRemoved node containing : 'tomato':\n");
-	printf("\033[0m");
-	while (t1)
-	{
-		printf("%s\n", (char *)t1->data);
-		t1 = t1->next;
-	}
+	// printf("\033[0;35m");
+	// printf("FT_LIST_REMOVE_IF : \n");
+	// printf("\033[0m");
+	// ft_list_remove_if(&t1, "tomato", &strcmp, &free);
+	// printf("\033[0;34m");
+	// printf("\nRemoved node containing : 'tomato':\n");
+	// printf("\033[0m");
+	// while (t1)  
+	// {
+	// 	printf("%s\n", (char *)t1->data);
+	// 	t1 = t1->next;
+	// }
     
 	return (0);
 }
