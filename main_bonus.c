@@ -20,51 +20,27 @@ extern void		ft_list_sort(t_list **begin_list, int (*cmp)());
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, 
 						int (*cmp)(), void (*free_fct)(void *));
 
-// void		ft_list_sort(t_list **begin_list, int (*cmp)())
-// {
-// 	t_list *list;
-// 	t_list *next;
-// 	char *a;
-
-// 	list = *begin_list;
-// 	while (list->next)
-// 	{
-// 		next = list->next;
-// 		while (next->next)
-// 		{
-// 			if (cmp(list->data, next->data) == 0)
-// 			{
-// 				a = list->data;
-// 				list->data = next->data;
-// 				next->data = a;
-// 			}
-// 			next = next->next;
-// 		}
-// 		list = list->next;
-// 	}
-// }
-
 int main()
 {
-	// printf("\033[0;34m");
-	// printf("-------------------------------------");
-	// printf("\n");
-	// printf("-------------------------------------");
-	// printf("\n");
+	printf("\033[0;34m");
+	printf("-------------------------------------");
+	printf("\n");
+	printf("-------------------------------------");
+	printf("\n");
 
-	// printf("\033[0;35m");
-	// printf("FT_ATOI_BASE : \n");
-	// printf("\033[0m");
+	printf("\033[0;35m");
+	printf("FT_ATOI_BASE : \n");
+	printf("\033[0m");
 
- 	// printf("[_FT: %d]\n", ft_atoi_base("+++2147483647", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("+-56", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
-	// printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
-	// printf("[_FT: %d]\n", ft_atoi_base("111", "01"));
-	// printf("[_FT: %d]\n", ft_atoi_base("-ff", "0123456789abcdef"));
+ 	printf("[_FT: %d]\n", ft_atoi_base("+++2147483647", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("+-56", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("1", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("-42", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("2147483648", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("-2147483648", "0123456789"));
+	printf("[_FT: %d]\n", ft_atoi_base("poney", "poney"));
+	printf("[_FT: %d]\n", ft_atoi_base("111", "01"));
+	printf("[_FT: %d]\n", ft_atoi_base("-ff", "0123456789abcdef"));
 	
 
 	t_list *t = NULL;

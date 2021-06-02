@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "errno.h"
 
 extern size_t	ft_strlen(char *str);
 extern char		*ft_strcpy(char *dest, const char *src);
@@ -87,10 +91,27 @@ int		main(void)
 	printf("FT_READ : \n");
 	printf("\033[0m");
 	char ss[100];
-	printf("[_FT: %lu | %s]\n", ft_read(0, ss, 12), ss);
-	printf("[_FT: %lu | %s]\n", ft_read(0, ss, 5), ss);	
-	printf("[_FT: %lu | %s]\n", ft_read(0, ss, 15), ss);
-	printf("[_FT: %lu | %s]\n", ft_read(0, ss, 1), ss);
+	int fd;
+	fd = open("README.md", O_RDONLY);
+	printf("[_FT: %lu | %s]\n", ft_read(fd, ss, 12), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[SYS: %lu | %s]\n", read(fd, ss, 12), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[_FT: %lu | %s]\n", ft_read(fd, ss, 5), ss);	
+	fd = open("README.md", O_RDONLY);
+	printf("[SYS: %lu | %s]\n", read(fd, ss, 5), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[_FT: %lu | %s]\n", ft_read(fd, ss, 15), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[SYS: %lu | %s]\n", read(fd, ss, 15), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[_FT: %lu | %s]\n", ft_read(fd, ss, 1), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[SYS: %lu | %s]\n", read(fd, ss, 1), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[_FT: %lu | %s]\n", ft_read(fd, ss, 0), ss);
+	fd = open("README.md", O_RDONLY);
+	printf("[SYS: %lu | %s]\n", read(fd, ss, 0), ss);
 
 	printf("\033[0;34m");
 	printf("-------------------------------------");
