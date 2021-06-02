@@ -9,6 +9,8 @@ _ft_list_remove_if:
     mov r12, [rdi]
     cmp rdi, 0
     je end
+    cmp rsi, 0
+    jz end
     cmp rdx, 0
     jz end
     cmp	rcx, 0

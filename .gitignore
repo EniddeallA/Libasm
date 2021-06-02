@@ -1,6 +1,6 @@
 .vscode
 objconv
-srcs/a.out.dSYM
-srcs/a.out
+a.out.dSYM
+a.out
 .DS_Store
 42libasm_tester
