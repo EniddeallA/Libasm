@@ -3,28 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
+#    By: eniddealla <eniddealla@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/13 14:11:37 by akhalid           #+#    #+#              #
-#    Updated: 2021/04/22 08:17:50 by akhalid          ###   ########.fr        #
+#    Updated: 2021/06/16 02:53:16 by eniddealla       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_strlen.s \
+
+
+SRC		=	ft_strlen.s \
 				ft_strcmp.s \
 				ft_strcpy.s \
 				ft_write.s \
 				ft_read.s \
 				ft_strdup.s
 
+SDIR = ./mandatory/
+
+SRCS =	$(addprefix $(SDIR), $(SRC))
+
 OBJS		=	$(SRCS:.s=.o)
 
-BONUS_SRCS	=	ft_atoi_base_bonus.s \
+BONUS_SRC	=	ft_atoi_base_bonus.s \
 				ft_list_size_bonus.s \
 				ft_list_push_front_bonus.s \
 				ft_list_remove_if_bonus.s \
 				ft_list_sort_bonus.s
-				
+
+BDIR = ./bonus/
+
+BONUS_SRCS	=	$(addprefix $(BDIR), $(BONUS_SRC))
+
 BONUS_OBJS	=	$(BONUS_SRCS:.s=.o)
 
 NASM			=	nasm
