@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eniddealla <eniddealla@student.42.fr>      +#+  +:+       +#+         #
+#    By: akhalid <akhalid@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/13 14:11:37 by akhalid           #+#    #+#              #
-#    Updated: 2021/06/16 02:53:16 by eniddealla       ###   ########.fr        #
+#    Updated: 2021/06/16 14:42:24 by akhalid          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,15 +60,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-test:			$(NAME)
-				gcc $(FLAGS) -o $(TEST) main.c
-				./$(TEST) < Makefile
-
 bonus:			$(BONUS_OBJS)
 				ar rcs $(NAME) $(BONUS_OBJS)
 
-test_bonus:		bonus
-				gcc $(FLAGS) -o $(TEST_BONUS) main_bonus.c
-				./$(TEST_BONUS)
-
-.PHONY:			clean fclean re test bonus test_bonus
+.PHONY:			clean fclean re bonus
